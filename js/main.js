@@ -1,27 +1,10 @@
-const searchEl =document.querySelector('.search');
-const searchInputEl =searchEl.querySelector('input')
-searchEl.addEventListener('click',function(){
-  //로직입력
-  searchInputEl.focus();
 
-})
-
-searchInputEl.addEventListener('focus',function(){
-  searchEl.classList.add('focused');
-  searchInputEl.setAttribute('placeholder','통합검색');
-  //html속성을 지정
-})
-searchInputEl.addEventListener('blur',function(){
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder','');
-  //html속성을 지정
-})
 
 const badgeEL = document.querySelector('header .badges');
 const toTopEl=document.querySelector('#to-top');
 
 window.addEventListener('scroll',_.throttle(function(){
-  console.log(window.scrollY)
+ 
   if(window.scrollY>500){
     //배지숨기기
     // badgeEL.style.display='none'
@@ -156,6 +139,3 @@ spyEls.forEach(function(spyEl){
   // Scene은 특정요소 감시
 })
 
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear();
-//textContent 요소의 글자내용을 얻어오거나 지정할수있음
